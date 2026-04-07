@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Work+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "inverse-primary": "#ffffff",
+              "on-background": "#472d00",
+              "outline": "#a47115",
+              "inverse-on-surface": "#b59872",
+              "surface-bright": "#fff8f4",
+              "on-secondary": "#fff7f3",
+              "secondary-fixed": "#fcdeba",
+              "outline-variant": "#e2a74a",
+              "on-primary": "#faf7f6",
+              "on-tertiary-fixed-variant": "#69665c",
+              "error": "#9e422c",
+              "secondary": "#715b3f",
+              "primary-container": "#e4e2e1",
+              "on-surface": "#472d00",
+              "on-tertiary-fixed": "#4c4940",
+              "secondary-fixed-dim": "#eed0ac",
+              "surface-container-highest": "#ffddb1",
+              "primary": "#5f5e5e",
+              "surface-container-high": "#ffe4c2",
+              "secondary-container": "#fcdeba",
+              "on-secondary-container": "#634e33",
+              "on-error-container": "#742410",
+              "tertiary-dim": "#56534a",
+              "surface-dim": "#ffd396",
+              "on-primary-fixed": "#3f3f3f",
+              "on-primary-fixed-variant": "#5c5b5b",
+              "error-container": "#fe8b70",
+              "secondary-dim": "#654f34",
+              "surface-container-lowest": "#ffffff",
+              "error-dim": "#5c1202",
+              "on-surface-variant": "#825600",
+              "inverse-surface": "#170c00",
+              "on-error": "#fff7f6",
+              "tertiary-fixed": "#f9f3e6",
+              "tertiary-fixed-dim": "#ebe5d8",
+              "surface-container-low": "#fff1e4",
+              "tertiary": "#625f55",
+              "tertiary-container": "#f9f3e6",
+              "surface-container": "#ffebd3",
+              "surface-tint": "#5f5e5e",
+              "primary-fixed-dim": "#d6d4d3",
+              "background": "#fff8f4",
+              "surface-variant": "#ffddb1",
+              "on-secondary-fixed-variant": "#6e583c",
+              "primary-dim": "#535252",
+              "surface": "#fff8f4",
+              "on-primary-container": "#525151",
+              "on-tertiary-container": "#5f5b52",
+              "on-secondary-fixed": "#4f3c22",
+              "on-tertiary": "#fff8ec",
+              "primary-fixed": "#e4e2e1"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Work Sans"],
+              "label": ["Work Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Work Sans', sans-serif; }
+        h1, h2, h3 { font-family: 'Newsreader', serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background selection:bg-secondary-container">
+<!-- Top Navigation -->
+<header class="fixed top-0 w-full z-50 bg-[#fff8f4]/80 backdrop-blur-md">
+<nav class="flex justify-between items-center px-6 py-4 w-full max-w-7xl mx-auto">
+<div class="font-['Newsreader'] font-light tracking-[0.2em] text-stone-800 text-lg uppercase">
+                STREFA WŁOSA I BRODY
+            </div>
+<button id="mobile-menu-button" class="md:hidden text-stone-700" aria-expanded="false" aria-controls="mobile-menu">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<!-- Mobile menu (hidden on md+) -->
+<div id="mobile-menu" class="md:hidden hidden absolute top-full left-0 w-full bg-background border-t border-outline-variant/5 shadow-md">
+  <nav class="flex flex-col gap-2 p-4">
+    <a class="py-3 px-4 rounded-sm hover:bg-surface-container-high transition-colors" href="#galeria">Galeria</a>
+    <a class="py-3 px-4 rounded-sm hover:bg-surface-container-high transition-colors" href="#kontakt">Kontakt</a>
+    <a class="mt-2 inline-block bg-primary text-on-primary px-4 py-3 rounded-sm text-center" href="tel:+48510985864">Zadzwoń: 510 985 864</a>
+  </nav>
+</div>
+<div class="hidden md:flex items-center gap-8 text-stone-500 font-['Newsreader'] tracking-wider uppercase text-sm">
+<a class="hover:text-stone-900 transition-colors duration-300" href="#galeria">Galeria</a>
+<a class="text-stone-900 font-semibold underline decoration-outline-variant underline-offset-8" href="#kontakt">Kontakt</a>
+<a class="bg-primary text-on-primary px-6 py-2 rounded-sm tracking-widest text-xs hover:bg-primary-dim transition-all active:scale-95" href="tel:+48510985864">ZADZWOŃ</a>
+</div>
+</nav>
+</header>
+<main class="pt-24 pb-16 px-6 max-w-7xl mx-auto">
+<!-- Hero Section Asymmetry -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-20">
+<div class="lg:col-span-7 flex flex-col justify-center">
+<h1 class="text-5xl md:text-7xl font-light leading-tight mb-8">Styl, który<br/><span class="italic text-on-surface-variant font-extralight">robi różnicę.</span></h1>
+<p class="text-lg text-on-surface-variant max-w-md leading-relaxed mb-10">To przestrzeń stworzona dla osób, które cenią jakość, styl i profesjonalizm. Zapewniamy indywidualne podejście oraz komfortową atmosferę podczas każdej wizyty.</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex items-center justify-center gap-3 bg-secondary text-on-secondary px-8 py-4 rounded-sm font-medium tracking-wide hover:bg-secondary-dim transition-all active:scale-95" href="tel:+48510985864">
+<span class="material-symbols-outlined" data-icon="call">call</span>
+                        510 985 864
+                    </a>
+<a class="flex items-center justify-center gap-3 bg-surface-container-high text-on-secondary-container px-8 py-4 rounded-sm font-medium tracking-wide hover:bg-surface-container-highest transition-all" href="https://www.facebook.com/share/1Foqst3Luw/?mibextid=wwXIfr" target="_blank">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+            NAPISZ DO NAS
+          </a>
+</div>
+</div>
+<div id="galeria" class="lg:col-span-5 relative group">
+<div class="aspect-[4/5] bg-surface-container-low overflow-hidden rounded-sm">
+<img alt="Barber Shop Interior" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Mood lighting interior of a luxury barber shop with leather chairs, wood accents, and vintage grooming tools on a marble counter" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2ZAtaeN-hPsQCYR8-bN9IeVi_3TLRERpYoHTv24sbtkG8KWbO2QL1d66-zMcZTiStttWJ-Kjv8tbSe4UE6WtKAi6REw58hnx6LZQr5NbffcZEpt9-mbXMDAeZ7w0X2oJzRQz5SnCc67oUGF7nq6ZteNYF6167qKMmuk-Wn2_uR6J9q6dE_r5DgRXEGfuqGNJGt3mXeyQ2yvl_X5hbfQ67xQohHPpfJL_3S6kScz-fKrh5DtmGUkdey6kkHcaGmfRlSfL1TWZADOm8"/>
+</div>
+<div class="absolute -bottom-6 -left-6 bg-surface-container-lowest p-8 border border-outline-variant/10 shadow-xl max-w-[240px]">
+<span class="block text-xs uppercase tracking-[0.2em] text-on-surface-variant mb-2">Odwiedź nas</span>
+<address class="not-italic font-headline text-xl leading-snug">
+  Rybnik,<br/>ul. Gliwicka 109
+</address>
+</div>
+</div>
+</section>
+<!-- Interactive Map and Hours Bento Grid -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20">
+<!-- Map Container -->
+<div class="lg:col-span-2 bg-surface-container-low min-h-[400px] relative overflow-hidden rounded-sm">
+<div class="absolute inset-0 grayscale opacity-80 contrast-125">
+<img alt="Map location" class="w-full h-full object-cover" data-alt="Clean minimalist stylized map view of an urban street layout with soft beige and charcoal tones" data-location="Rybnik, Poland" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeAExsJ2_AHYLFt75Gwjj4bOreMXEC12i9EzSYDf0tEIPvxSW_WqVvz5CSpel7xU2c5ju6XzO533m32EUTKM_fC6JrAR7faQxTKW7ZWH8xF2EtZ80Urm53RG0I2Z4R0azVJi09ZiUwDxIhsWk6Smaod6iU7-6jh_xtdsy86zCYJ2_AKIHE7tf5vLZxZ1Kx1fPPjd7gjZB0p5ykXuk41H17mgaqCSmnvOoijB8xkpuBBcmOsKZ2hakSXDhFMpxRfzL92EQHXbtQMOZc"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low/60 to-transparent"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+<div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-on-primary animate-bounce shadow-lg">
+<span class="material-symbols-outlined" data-icon="location_on">location_on</span>
+</div>
+</div>
+<button class="absolute bottom-6 right-6 bg-surface-container-lowest px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-widest shadow-sm border border-outline-variant/20 hover:bg-surface-bright transition-colors">
+    Otwórz w Mapach
+</button>
+</div>
+<!-- Operating Hours Card -->
+<div class="bg-surface-container-high p-10 flex flex-col justify-between rounded-sm">
+<div>
+<h2 class="text-3xl font-light mb-8">Godziny otwarcia</h2>
+<ul class="space-y-4 font-body">
+<li class="flex justify-between items-center pb-2 border-b border-outline-variant/10">
+<span class="text-on-surface-variant">Poniedziałek</span>
+<span class="font-medium">08:00 — 16:00</span>
+</li>
+<li class="flex justify-between items-center pb-2 border-b border-outline-variant/10">
+<span class="text-on-surface-variant">Wtorek</span>
+<span class="font-medium">08:00 — 16:00</span>
+</li>
+<li class="flex justify-between items-center pb-2 border-b border-outline-variant/10">
+<span class="text-on-surface-variant">Środa</span>
+<span class="font-medium">11:00 — 18:00</span>
+</li>
+<li class="flex justify-between items-center pb-2 border-b border-outline-variant/10">
+<span class="text-on-surface-variant">Czwartek</span>
+<span class="font-medium">08:00 — 16:00</span>
+</li>
+<li class="flex justify-between items-center pb-2 border-b border-outline-variant/10">
+<span class="text-on-surface-variant">Piątek</span>
+<span class="font-medium">08:00 — 16:00</span>
+</li>
+<li class="flex justify-between items-center pb-2 border-b border-outline-variant/10">
+<span class="text-on-surface-variant">Sobota</span>
+<span class="font-medium">według zapisów</span>
+</li>
+</ul>
+</div>
+</section>
+
+</main>
+<!-- Footer -->
+<footer class="bg-[#ffe4c2]">
+<div id="kontakt" class="grid grid-cols-1 md:grid-cols-3 gap-12 px-8 py-16 max-w-7xl mx-auto">
+<div class="flex flex-col gap-6">
+<span class="font-['Newsreader'] italic text-2xl text-stone-900">STREFA WŁOSA I BRODY</span>
+<p class="font-['Work_Sans'] text-sm uppercase tracking-widest opacity-70 leading-relaxed">
+          Tworzymy charakter od 2026.<br/>Idealne miejsce dla nowoczesnego dżentelmena w Rybniku.
+        </p>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-['Work_Sans'] text-xs font-bold uppercase tracking-widest mb-2">Kontakt</span>
+<a class="font-['Work_Sans'] text-sm uppercase tracking-widest opacity-70 hover:opacity-100 transition-all" href="tel:+48510985864">+48 510 985 864</a>
+<a class="font-['Work_Sans'] text-sm uppercase tracking-widest opacity-70 hover:opacity-100 transition-all" href="#">Rybnik, ul. Gliwicka 109</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-['Work_Sans'] text-xs font-bold uppercase tracking-widest mb-2">Media</span>
+<a class="font-['Work_Sans'] text-sm uppercase tracking-widest opacity-70 hover:opacity-100 transition-all" target="_blank" href="https://www.instagram.com/strefa_wlosa_sc">Instagram</a>
+<a class="font-['Work_Sans'] text-sm uppercase tracking-widest opacity-70 hover:opacity-100 transition-all" target="_blank" href="https://www.facebook.com/share/1Foqst3Luw/?mibextid=wwXIfr">Facebook</a>
+<!-- <a class="font-['Work_Sans'] text-sm uppercase tracking-widest opacity-70 hover:opacity-100 transition-all" href="#">Booksy</a> -->
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-8 py-8 border-t border-stone-800/10 text-center">
+<span class="font-['Work_Sans'] text-[10px] uppercase tracking-[0.3em] opacity-40">
+        © 2026 STREFA WŁOSA I BRODY. Wszelkie prawa zastrzeżone.
+      </span>
+</div>
+</footer>
+<script>
+  (function(){
+    const btn = document.getElementById('mobile-menu-button');
+    const menu = document.getElementById('mobile-menu');
+    if (!btn || !menu) return;
+    btn.addEventListener('click', function(){
+      menu.classList.toggle('hidden');
+      const icon = btn.querySelector('.material-symbols-outlined');
+      const opened = !menu.classList.contains('hidden');
+      btn.setAttribute('aria-expanded', opened ? 'true' : 'false');
+      if (icon) icon.textContent = opened ? 'close' : 'menu';
+    });
+  })();
+</script>
+</body></html>
